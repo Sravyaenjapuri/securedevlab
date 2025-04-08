@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoginTester from '../sql_injection_helper/login';
 import { useParams } from 'react-router-dom';
 
-const BACKEND_URL = "http://127.0.0.1:5000";
+const BACKEND_URL = "https://securedevlab.onrender.com";
 
 const SQLPlayground = () => {
   const { labId } = useParams();
@@ -23,7 +23,7 @@ const SQLPlayground = () => {
 
   const runQuery = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:5000/playground', {
+      const res = await fetch('https://securedevlab.onrender.com/playground', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
